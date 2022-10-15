@@ -1,0 +1,74 @@
+security:
+  issuers:
+    - "http://REPLACE_KEYCLOAK_HOST:REPLACE_KEYCLOAK_PORT"
+  internalAuthServerUrl: "http://REPLACE_KEYCLOAK_HOST:REPLACE_KEYCLOAK_PORT"
+  externalAuthServerUrl: "http://REPLACE_KEYCLOAK_HOST:REPLACE_KEYCLOAK_PORT"
+
+spring:
+  cache:
+    type: redis
+    redis:
+      cache-null-values: false
+      enable-statistics: true
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: REPLACE_GROUP-REPLACE_APP_NAME
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://host.docker.internal:3306/REPLACE_GROUP
+    username: REPLACE_GROUP
+    password: REPLACE_GROUP
+  liquibase:
+    url: jdbc:mariadb://host.docker.internal:3306/REPLACE_GROUP
+    user: REPLACE_GROUP
+    password: REPLACE_GROUP
+  redis:
+    host: host.docker.internal
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    operations-sorter: method
+    oauth:
+      clientId: swagger
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logbook:
+  exclude:
+    - "/actuator/**"
+
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+logging:
+  level:
+    com:
+      REPLACE_GROUP:
+        REPLACE_APP_NAME: INFO
+    org:
+      springframework:
+        #        cache: TRACE
+        boot:
+          autoconfigure: INFO
+    web: INFO
+    org.springframework:
+      security: INFO
+    org.zalando:
+      logbook: INFO
