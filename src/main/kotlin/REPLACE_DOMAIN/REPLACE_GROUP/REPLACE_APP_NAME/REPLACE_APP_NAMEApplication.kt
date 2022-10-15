@@ -1,21 +1,6 @@
 package REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME
 
 import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.config.log.StartupLogger
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.goal.GoalEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.project.ProjectEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.task.TaskEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.task.TaskImpactEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.task.TaskTypeEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.task.TaskUrgencyEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.entities.user.UserEntity
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.goal.GoalMotivationRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.goal.GoalRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.project.ProjectRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.task.TaskImpactRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.task.TaskRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.task.TaskTypeRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.task.TaskUrgencyRepository
-import REPLACE_DOMAIN.REPLACE_GROUP.REPLACE_APP_NAME.model.db.repository.user.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -36,7 +21,7 @@ class REPLACE_APP_NAMEApplication: CommandLineRunner {
 }
 
 fun main(args: Array<String>) {
-	runApplication<CoreServiceApplication>(*args) {
+	runApplication<REPLACE_APP_NAMEApplication>(*args) {
 		addListeners(StartupLogger())
 	}
 }
