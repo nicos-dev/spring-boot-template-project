@@ -36,6 +36,6 @@ grep -rl REPLACE_KEYCLOAK_HOST . --exclude-dir=.git | xargs sed -i "s/REPLACE_KE
 grep -rl REPLACE_KEYCLOAK_PORT . --exclude-dir=.git | xargs sed -i "s/REPLACE_KEYCLOAK_PORT/$KEYCLOAK_PORT/g"
 
 # RUN DOCKER CONTAINERS
-docker run --detach --name "$GROUP_NAME-mariadb" --env MARIADB_USER="$GROUP_NAME" --env MARIADB_PASSWORD="$GROUP_NAME" --env MARIADB_ROOT_PASSWORD="$GROUP_NAME" -p "3306:3306" --env MARIADB_DATABASE="$GROUP_NAME"  mariadb:latest
-docker run --detach --name "$GROUP_NAME-redis" redis:latest
-docker run -p $KEYCLOAK_PORT:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:19.0.2 start-dev
+docker run -d --name "$GROUP_NAME-mariadb" --env MARIADB_USER="$GROUP_NAME" --env MARIADB_PASSWORD="$GROUP_NAME" --env MARIADB_ROOT_PASSWORD="$GROUP_NAME" -p "3306:3306" --env MARIADB_DATABASE="$GROUP_NAME"  mariadb:latest
+docker run -d --name "$GROUP_NAME-redis" redis:latest
+docker run -d -p $KEYCLOAK_PORT:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:19.0.2 start-dev
