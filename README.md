@@ -48,17 +48,17 @@
 
 <br/>
 
-Image 1: <br/>
 ![](./docs/img/key-setup_create-realm.png)
+<br/> *Image 1* <br/><br/>
 
-Image 2: <br/>
 ![](./docs/img/keycloak-setup_create-swagger-client.png)
+<br/> *Image 2* <br/><br/>
 
-Image 3: <br/>
 ![](./docs/img/keycloak-setup_create-service-client.png)
+<br/> *Image 3* <br/><br/>
 
-Image 4: <br/>
 ![](./docs/img/keycloak-setup_create-user-1.png)
+<br/> *Image 4* <br/><br/>
 
-Image 5: <br/>
 ![](./docs/img/keycloak-setup_create-user-2.png)
+<br/> *Image 5* <br/><br/>
