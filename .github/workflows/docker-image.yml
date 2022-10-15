@@ -1,6 +1,7 @@
 name: Docker Image CI
 
 # Before run create repository secrets DOCKER_USER & DOCKER_PASSWORD containing docker-hub credentials
+# AND replace image url ($username & $repository)
 
 on:
   push:
