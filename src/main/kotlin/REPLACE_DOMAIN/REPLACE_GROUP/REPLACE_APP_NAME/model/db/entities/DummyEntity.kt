@@ -7,7 +7,8 @@ import javax.persistence.*
 class DummyEntity(
 
     @Id
-    val id: String,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? null,
 
     @Column(name = "name", nullable = false)
     val name: String = "Dummy",
